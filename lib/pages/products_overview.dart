@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shop/models/product.dart';
+import 'package:shop/widgets/product_item.dart';
 
 class ProductsOverview extends StatelessWidget {
-  List<Product> productsLoaded;
+  List<Product> loadedProducts;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,8 +12,9 @@ class ProductsOverview extends StatelessWidget {
       ),
       body: GridView.builder(
           padding: const EdgeInsets.all(10),
-          itemCount: productsLoaded.length,
-          itemBuilder: (ctx, i) => Container(),
+          itemCount: loadedProducts.length,
+          itemBuilder: (ctx, i) => ProductItem(loadedProducts[i].id,
+              loadedProducts[i].imageUrl, loadedProducts[i].description),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 3 / 2,
