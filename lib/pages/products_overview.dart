@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop/providers/product.dart';
 import 'package:shop/widgets/products_grid.dart';
 
 class ProductsOverview extends StatelessWidget {
-  List<Product> loadedProducts;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
