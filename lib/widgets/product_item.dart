@@ -24,10 +24,10 @@ class ProductItem extends StatelessWidget {
           title: Text(product.title, textAlign: TextAlign.center),
           leading: IconButton(
               icon: Icon(
-                Icons.favorite,
+                product.isFavorite ? Icons.favorite : Icons.favorite_border,
                 color: Theme.of(context).accentColor,
               ),
-              onPressed: () {}),
+              onPressed: product.toggleFavorite),
           trailing: IconButton(
               icon: Icon(
                 Icons.shopping_cart,
