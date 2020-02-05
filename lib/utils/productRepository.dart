@@ -1,4 +1,4 @@
-import 'package:shop/models/product.dart';
+import 'package:shop/providers/product.dart';
 
 class ProductsRepository {
   static List<Product> getProducts() {
