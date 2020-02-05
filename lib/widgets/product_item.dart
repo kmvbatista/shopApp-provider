@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shop/pages/product_detail.dart';
 import 'package:shop/providers/product.dart';
 import 'package:provider/provider.dart';
-import 'package:shop/providers/products.dart';
 
 class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
