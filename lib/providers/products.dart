@@ -5,8 +5,23 @@ import 'package:shop/utils/productRepository.dart';
 class Products with ChangeNotifier {
   List<Product> _items = ProductsRepository.getProducts();
 
+  bool _showFavoritesOnly = false;
+
   List<Product> get items {
+    if (_showFavoritesOnly) {
+      return _items.where((item) => item.isFavorite).toList();
+    }
     return [..._items];
+  }
+
+  void showFavoritesOnly() {
+    _showFavoritesOnly = true;
+    notifyListeners();
+  }
+
+  void showAllProducts() {
+    _showFavoritesOnly = false;
+    notifyListeners();
   }
 
   void addProduct(Product itemToAdd) {
