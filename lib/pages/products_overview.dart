@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop/providers/products.dart';
+import 'package:shop/providers/cart.dart';
+import 'package:shop/widgets/badge.dart';
 import 'package:shop/widgets/products_grid.dart';
 import 'package:provider/provider.dart';
 
@@ -38,6 +39,14 @@ class _ProductsOverviewState extends State<ProductsOverview> {
               PopupMenuItem(
                   child: Text('All products'), value: FilterOptions.All),
             ],
+          ),
+          Consumer<Cart>(
+            builder: (_, cartData, ch) =>
+                Badge(child: ch, value: cartData.itemCount.toString()),
+            child: IconButton(
+              icon: Icon(Icons.shopping_cart),
+              onPressed: () {},
+            ),
           ),
         ],
       ),
